@@ -8,6 +8,7 @@
 
      changelog:
 
+    v. 2016-XX      - add ChargeUnitCode attribute in the Discount element - see https://groups.google.com/forum/#!topic/alpinebits/cjt9K4qUGE0
 
     v. 2015-07b 1.4 - weaken the schema for Inventory (to prepare for upcoming release that will support Inventory deltas):
 
@@ -2109,6 +2110,14 @@
                             <rng:data type="string">
                               <rng:param name="pattern">0*1*</rng:param>
                             </rng:data>
+                          </rng:attribute>
+                        </rng:optional>
+                        <rng:optional>
+                          <rng:attribute name="ChargeUnitCode">
+                            <rng:choice>
+                              <rng:value>5</rng:value>
+                              <rng:value>12</rng:value>
+                            </rng:choice>
                           </rng:attribute>
                         </rng:optional>
 

@@ -8,6 +8,8 @@
 
      changelog:
 
+    v. 2016-XX      - add ChargeUnitCode attribute in the Discount element - see https://groups.google.com/forum/#!topic/alpinebits/cjt9K4qUGE0
+
     v. 2015-07b 1.4 - weaken the schema for Inventory (to prepare for upcoming release that will support Inventory deltas):
 
                       - the RoomAmenityCode attribute becomes optional to allow empty Amenity elements 
@@ -1637,6 +1639,14 @@
                                       <xs:simpleType>
                                         <xs:restriction base="xs:string">
                                           <xs:pattern value="0*1*"/>
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="ChargeUnitCode">
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:enumeration value="5"/> <!-- Per Occurence -->
+                                          <xs:enumeration value="12"/><!-- Per Stay -->
                                         </xs:restriction>
                                       </xs:simpleType>
                                     </xs:attribute>

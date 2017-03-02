@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+     AlpineBits 2016-XX
+     http://www.alpinebits.org/
+
+     sample message file
+
+     changelog:
+     v. PROPOSAL           Add ChargeUnitCode
+-->
+
+<OTA_HotelRatePlanNotifRQ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns="http://www.opentravel.org/OTA/2003/05"
+                          xsi:schemaLocation="http://www.opentravel.org/OTA/2003/05 OTA_HotelRatePlanNotifRQ.xsd"
+                          Version="1.000">
+
+    <RatePlans HotelCode="123" HotelName="Frangart Inn">
+
+        <RatePlan RatePlanNotifType="Overlay" CurrencyCode="EUR" RatePlanCode="Rate1-4-HB">
+
+            <Rates>
+
+                <Rate InvTypeCode="double" Start="2014-03-03" End="2014-03-08">
+
+                    <BaseByGuestAmts>
+                        <BaseByGuestAmt Type="7" NumberOfGuests="1" AgeQualifyingCode="10" AmountAfterTax="106"/>
+                        <BaseByGuestAmt Type="7" NumberOfGuests="2" AgeQualifyingCode="10" AmountAfterTax="96"/>
+                    </BaseByGuestAmts>
+                    <AdditionalGuestAmounts>
+                        <AdditionalGuestAmount AgeQualifyingCode="10" Amount="76.8"/>
+                        <AdditionalGuestAmount AgeQualifyingCode="8"              MaxAge="3" Amount="0"    />
+                        <AdditionalGuestAmount AgeQualifyingCode="8"  MinAge="3"  MaxAge="6" Amount="38.4" />
+                        <AdditionalGuestAmount AgeQualifyingCode="8"  MinAge="6"  MaxAge="10" Amount="48"  />
+                        <AdditionalGuestAmount AgeQualifyingCode="8"  MinAge="10" MaxAge="16" Amount="67.2"/>
+                    </AdditionalGuestAmounts>
+                    <MealsIncluded MealPlanIndicator="true" MealPlanCodes="12"/>
+
+                </Rate>
+
+            </Rates>
+
+            <Offers>
+
+                <Offer>
+                    <Discount NightsRequired="7" NightsDiscounted="1" Percent="100" DiscountPattern="0000001" ChargeUnitCode="5"/>
+                </Offer>
+
+                <Offer>
+                    <Discount Percent="100"/>
+                    <Guests>
+                        <Guest AgeQualifyingCode="8" MaxAge="5" FirstQualifyingPosition="1" LastQualifyingPosition="1" MinCount="1"/>
+                    </Guests>
+                </Offer> 
+
+            </Offers>
+
+        </RatePlan>
+
+    </RatePlans>
+
+</OTA_HotelRatePlanNotifRQ>
